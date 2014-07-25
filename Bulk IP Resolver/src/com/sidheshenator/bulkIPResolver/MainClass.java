@@ -30,7 +30,7 @@ public class MainClass {
 			BufferedReader br = null;
 			File inputFile = new File("C://tmpBRMod2.txt");
 			File bpuReport = new File("C://BRMod2.txt");
-			File geoLocationFile = new File("C:\\Users\\A00121007\\workspace\\BulkResolverMod2\\res\\GeoLiteCity.dat");
+			File geoLocationFile = new File("..\\..\\..\\..\\res\\GeoLiteCity.dat");
 			FileWriter writer2 = new FileWriter(bpuReport);
 			String newLineSeperator = System.getProperty("line.separator");
 			br = new BufferedReader(new FileReader(inputFile));
