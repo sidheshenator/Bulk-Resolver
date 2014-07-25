@@ -28,9 +28,9 @@ public class MainClass {
 
 			String sCurrentLine;
 			BufferedReader br = null;
-			File inputFile = new File("C://tmpBRMod2.txt");
-			File bpuReport = new File("C://BRMod2.txt");
-			File geoLocationFile = new File("..\\..\\..\\..\\res\\GeoLiteCity.dat");
+			File inputFile = new File("tmpBRMod2.txt");
+			File bpuReport = new File("BRMod2.txt");
+			File geoLocationFile = new File(".\\.\\.\\.\\res\\GeoLiteCity.dat");
 			FileWriter writer2 = new FileWriter(bpuReport);
 			String newLineSeperator = System.getProperty("line.separator");
 			br = new BufferedReader(new FileReader(inputFile));
@@ -56,7 +56,7 @@ public class MainClass {
 			writer2.close();
 			br.close();
 			inputFile.delete();
-			openNotepad("C://BRMod2.txt");
+			openNotepad("BRMod2.txt");
 			System.out.println("Task completed.\nFile- C://BRMod2.txt is generated.\n\nPress enter to exit.");
 			Scanner sc = new Scanner(System.in);
 			sc.nextLine();
@@ -64,7 +64,7 @@ public class MainClass {
 			return;
  
 		} catch (IOException e) {
-			File newFile = new File("C://tmpBRMod2.txt");
+			File newFile = new File("tmpBRMod2.txt");
 			try {
 				newFile.createNewFile();
 				FileWriter writer1 = new FileWriter(newFile); 
@@ -72,7 +72,7 @@ public class MainClass {
 			    writer1.write("Paste the text in this file and save the changes."+newLineSeperator+newLineSeperator); 
 			    writer1.flush();
 			    writer1.close();
-			    openNotepad("C://tmpBRMod2.txt");
+			    openNotepad("tmpBRMod2.txt");
 			    System.out.println("Run the program again.");
 			    return;
 				}
