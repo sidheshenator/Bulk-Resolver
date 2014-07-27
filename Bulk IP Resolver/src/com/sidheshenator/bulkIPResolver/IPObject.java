@@ -4,7 +4,6 @@ public class IPObject {
 
 	private String IP;
 	private String DNSName;
-	private String machineType;
 	private boolean active;
 	private boolean routable;
 	
@@ -22,7 +21,6 @@ public class IPObject {
 		super();
 		this.IP = null;
 		this.DNSName = null;
-		this.machineType = null;
 		this.active = false;
 		this.routable = false;
 		this.countryCode = null;
@@ -47,12 +45,6 @@ public class IPObject {
 	}
 	public void setDNSName(String dNSName) {
 		DNSName = dNSName;
-	}
-	public String getMachineType() {
-		return machineType;
-	}
-	public void setMachineType(String machineType) {
-		this.machineType = machineType;
 	}
 	public boolean isActive() {
 		return active;
@@ -119,7 +111,7 @@ public class IPObject {
 	public String toString()
 	{
 		String stringObj = null;
-		stringObj = this.getIP()+"\t"+this.getDNSName()+"\t"+this.getMachineType()+"\t"+this.isActive()+"\t"+
+		stringObj = this.getIP()+"\t"+this.getDNSName()+"\t"+this.isActive()+"\t"+
 		this.isRoutable()+"\t"+this.getCountryCode()+"\t"+this.getCountryName()+"\t"+this.getCity()+"\t"+
 				this.getPostalCode()+"\t"+this.getLatitude()+"\t"+this.getLongitude()+"\n";
 		return stringObj;

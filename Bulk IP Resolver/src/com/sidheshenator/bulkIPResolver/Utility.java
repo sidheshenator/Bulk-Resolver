@@ -15,16 +15,17 @@ public class Utility {
 		try{
 			InetAddress inetAddress;
               // convert address from string representation to byte array
-            byte[] b = new byte[4];
+            //byte[] b = new byte[4];
             String IPAddress = obj.getIP();
-            String[] bytes = IPAddress.split("[.]");
+          /*  String[] bytes = IPAddress.split("[.]");
             for (int i = 0; i < bytes.length; i++)
             {
                 b[i] = new Integer(bytes[i]).byteValue();
             }
             // get Internet Address of this host address
             inetAddress = InetAddress.getByAddress(b);
-            
+            */
+            inetAddress = InetAddress.getByName(IPAddress);
             //set DNS name
             obj.setDNSName(inetAddress.getHostName());
             
@@ -47,20 +48,6 @@ public class Utility {
 		}
 	}
 
-	public static void getMachineType(IPObject obj)
-	{
-        
-		if(obj.getDNSName().matches("[\\s]*10[[\\w\\d\\W]+[.]]+pseg[.]com[\\s]*"))
-			obj.setMachineType("Desktop");
-		else
-		{
-			if(obj.getDNSName().matches("[\\s]*15[[\\w\\d]+[.]]+pseg[.]com[\\s]*"))
-				obj.setMachineType("Laptop");
-			else
-				obj.setMachineType("None of the above");
-		}
-	}
-	
 	public static void getGeoLocation(IPObject obj, File geoLocationFile)
 	{
 		LookupService lookup;
@@ -75,9 +62,9 @@ public class Utility {
 			obj.setPostalCode(locationServices.postalCode);
 			obj.setLatitude(locationServices.latitude);
 			obj.setLongitude(locationServices.longitude);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Oh shit!");
+			System.out.println(e);
 		}
 
 	}
