@@ -8,24 +8,13 @@ import com.maxmind.geoip.*;
 
 public class Utility {
 	
-
-	
 	public static void IPResolver(IPObject obj)
 	{
 		try{
 			InetAddress inetAddress;
-              // convert address from string representation to byte array
-            //byte[] b = new byte[4];
             String IPAddress = obj.getIP();
-          /*  String[] bytes = IPAddress.split("[.]");
-            for (int i = 0; i < bytes.length; i++)
-            {
-                b[i] = new Integer(bytes[i]).byteValue();
-            }
-            // get Internet Address of this host address
-            inetAddress = InetAddress.getByAddress(b);
-            */
             inetAddress = InetAddress.getByName(IPAddress);
+
             //set DNS name
             obj.setDNSName(inetAddress.getHostName());
             
